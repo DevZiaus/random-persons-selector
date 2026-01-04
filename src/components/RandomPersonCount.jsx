@@ -4,7 +4,8 @@ import Headline from './Headline';
 import Button from './Button';
 
 const RandomPersonCount = () => {
-    const { handleSelect } = useContext(PersonContext);
+    const { RandomPersonCount, setRandomPersonCount, handleSelect } =
+        useContext(PersonContext);
 
     return (
         <div className='flex flex-col items-center justify-center mt-5'>
@@ -19,10 +20,14 @@ const RandomPersonCount = () => {
                 onSubmit={handleSelect}
             >
                 <input
-                    className='w-1/3 px-2 py-0.5 h-10 border border-gray-300 rounded focus:outline-0 focus:border-blue-500'
+                    className='w-1/3 px-2 py-1 h-10 border border-gray-300 rounded focus:outline-0 focus:border-blue-500'
                     type='number'
                     id='randomCount'
                     placeholder='2'
+                    value={RandomPersonCount}
+                    onChange={(e) =>
+                        setRandomPersonCount(Number(e.target.value))
+                    }
                 />
                 <Button
                     type='submit'

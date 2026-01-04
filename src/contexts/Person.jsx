@@ -7,11 +7,6 @@ const PersonProvider = ({ children }) => {
     const [selectedPersons, setSelectedPersons] = useState([]);
     const [randomPersonCount, setRandomPersonCount] = useState(2);
 
-    //   const selectRandomPersons = (count) => {
-    //     const shuffled = [...personList].sort(() => 0.5 - Math.random());
-    //     return shuffled.slice(0, count);
-    //   };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const names = e.target.elements.personList.value;
@@ -23,6 +18,11 @@ const PersonProvider = ({ children }) => {
         e.target.reset();
     };
 
+    //   const selectRandomPersons = (count) => {
+    //     const shuffled = [...personList].sort(() => 0.5 - Math.random());
+    //     return shuffled.slice(0, count);
+    //   };
+
     const selectRandomPersons = (count) => {
         const shuffled = [...personList];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -31,14 +31,10 @@ const PersonProvider = ({ children }) => {
         }
         return shuffled.slice(0, count);
     };
+
     const handleSelect = (e) => {
         e.preventDefault();
-
-        const randomCount = Number(e.target.elements.randomCount.value);
-        setRandomPersonCount(randomCount);
-
-        const selected = selectRandomPersons(randomCount);
-        setSelectedPersons(selected);
+        setSelectedPersons(selectRandomPersons(randomPersonCount));
     };
 
     return (

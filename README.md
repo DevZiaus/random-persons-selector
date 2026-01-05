@@ -6,7 +6,7 @@ This app takes a list of names from input and selects number of random persons g
 
 -   vite
 -   React
--   context API
+-   Context API
 -   Tailwind
 
 ## Features
@@ -16,6 +16,10 @@ This app takes a list of names from input and selects number of random persons g
 -   styled with Taiwind CSS
 -   Random Person Can be any number set by user
 -   Count of Person List
+-   Error Handling
+-   Name Validation
+-   Name Duplication Checked
+-   Selector validation
 
 ## Usage
 

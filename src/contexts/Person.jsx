@@ -10,13 +10,27 @@ const PersonProvider = ({ children }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const names = e.target.elements.personList.value;
-        const presentPersons = names
-            .split(',')
-            .map((name) => name.trim())
-            .filter((name) => name);
-        setPersonList([...personList, ...presentPersons]);
-        e.target.reset();
-    };
+        // Check empty input
+        if (!names) {
+            alert("Please enter at least one name.");
+            return;
+        }
+
+      // Check invalid characters (only letters, commas, spaces allowed)
+      const validPattern = /^[a-zA-Z\s,]+$/;
+
+      if (!validPattern.test(names)) {
+          alert("Only letters, commas, and spaces are allowed.");
+          return;
+      }
+        
+      const presentPersons = names
+          .split(",")
+          .map(name => name.trim())
+          .filter(Boolean);
+           setPersonList(prev => [...prev, ...presentPersons]);
+           e.target.reset();
+      };
 
     //   const selectRandomPersons = (count) => {
     //     const shuffled = [...personList].sort(() => 0.5 - Math.random());
@@ -57,3 +71,4 @@ const PersonProvider = ({ children }) => {
 };
 
 export default PersonProvider;
+

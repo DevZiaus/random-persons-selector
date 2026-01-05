@@ -4,7 +4,7 @@ This app takes a list of names from input and selects number of random persons g
 
 ## Stack
 
--   vite
+-   Vite
 -   React
 -   Context API
 -   Tailwind

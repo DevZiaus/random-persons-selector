@@ -6,26 +6,28 @@ import PersonListInput from './PersonListInput';
 import SelectedPersons from './SelectedPersons';
 import Headline from './Headline';
 import RandomPersonCount from './RandomPersonCount';
+import ErrorSection from './ErrorSection';
 
-const Main = () => {
-    const { personList, selectedPersons } = useContext(PersonContext);
-    return (
-        <main className='container mx-auto p-4 min-h-[75vh]'>
-            <Headline
-                as='h2'
-                text='Welcome to the Random Person Selector!'
-                className='text-center text-2xl mb-6 font-semibold'
-            />
-            <PersonListInput />
-            {personList.length > 0 && (
-                <>
-                    <PersonList />
-                    <RandomPersonCount />
-                    {selectedPersons.length > 0 && <SelectedPersons />}
-                </>
-            )}
-        </main>
-    );
+const MainSection = () => {
+  const { error, personList, selectedPersons } = useContext(PersonContext);
+  return (
+    <main className='container mx-auto p-4 min-h-[75vh]'>
+      <Headline
+        as='h2'
+        text='Welcome to the Random Person Selector!'
+        className='text-center text-2xl mb-6 font-semibold'
+      />
+      <PersonListInput />
+      {personList.length > 0 && (
+        <>
+          <PersonList />
+          <RandomPersonCount />
+          {selectedPersons.length > 0 && <SelectedPersons />}
+        </>
+      )}
+      {error && <ErrorSection />}
+    </main>
+  );
 };
 
-export default Main;
+export default MainSection;

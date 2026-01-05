@@ -79,6 +79,7 @@ const PersonProvider = ({ children }) => {
 
   const handleSelect = (e) => {
     e.preventDefault();
+    setError(null);
     if (randomPersonCount > personList.length) {
       setError(new Error('Not enough persons to select from!'));
       return;

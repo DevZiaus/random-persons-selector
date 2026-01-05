@@ -19,6 +19,8 @@ const PersonListInput = () => {
                 <div className='flex justify-between items-center'>
                     <input
                         id='personList'
+                        type='text'
+                        name="personList"
                         className='w-full px-4 py-2 border border-gray-300 rounded focus:outline-0 focus:border-blue-500'
                         placeholder='e.g., John, Jane, Bob, Alice'
                     />
@@ -34,3 +36,4 @@ const PersonListInput = () => {
 };
 
 export default PersonListInput;
+

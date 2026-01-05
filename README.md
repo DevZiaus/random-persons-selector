@@ -13,13 +13,13 @@ This app takes a list of names from input and selects number of random persons g
 
 -   Clean and reusable code
 -   State managed using cotext API
--   styled with Taiwind CSS
+-   Styled with Taiwind CSS
 -   Random Person Can be any number set by user
 -   Count of Person List
 -   Error Handling
 -   Name Validation
 -   Name Duplication Checked
--   Selector validation
+-   Selector Input Field validation
 
 ## Usage
 
